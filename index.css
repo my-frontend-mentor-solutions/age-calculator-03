@@ -1,0 +1,142 @@
+@import url(root.css);
+
+#card-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--off-white);
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+
+#card-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 16px 16px 100px 16px;
+}
+
+#field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 120px 0px 20px;
+}
+
+.empty-field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+}
+
+.label {
+    font-size: 14px;
+    color: var(--smokey-grey);
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.field {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 800;
+    width: 125px;
+    border-radius: 7px;
+    border: 2px solid var(--light-grey);
+    outline: none;
+}
+
+.field::placeholder {
+    color: var(--light-grey);
+
+}
+
+.field:focus {
+    border: 2px solid var(--purple);
+}
+
+.field::-webkit-outer-spin-button,
+.field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error-p {
+    height: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    color: var(--light-red);
+    padding-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#arrow-container {
+    width: 100%;
+    padding: 0 35px;
+    display: flex;
+}
+
+#line {
+    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid var(--light-grey);
+}
+
+#arrow {
+    background-color: var(--purple);
+    width: 70px;
+    height: 70px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-width: 0;
+    transition-duration: .3s;
+}
+
+#arrow:hover {
+    cursor: pointer;
+    background-color: var(--off-black);
+}
+
+#img {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    filter: invert(1);
+}
+
+
+#result-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 40px 20px;
+
+}
+
+.result {
+    padding: 5px 20px;
+    display: flex;
+    line-height: 1;
+}
+
+.count {
+    color: var(--purple);
+    font-size: 70px;
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+.text {
+    padding-left: 10px;
+    color: #000;
+    font-size: 70px;
+    font-weight: 700;
+    font-style: italic;
+
+}

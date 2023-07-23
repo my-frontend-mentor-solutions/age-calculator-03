@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="card-container">
+        <div id="card-wrapper">
+            <div id="field-container">
+                <div class="empty-field">
+                    <label id="day-label" for="day" class="label">DAY</label>
+                    <input type="number" name="day" id="day-field" placeholder="DD" class="field">
+                    <p id="day-error" class="error-p"></p>
+                </div>
+                <div class="empty-field">
+                    <label id="month-label" for="month" class="label">MONTH</label>
+                    <input type="number" name="month" id="month-field" placeholder="MM" class="field">
+                    <p id="month-error" class="error-p"></p>
+                </div>
+                <div class="empty-field">
+                    <label id="year-label" for="year" class="label">YEAR</label>
+                    <input type="number" name="year" id="year-field" placeholder="YYYY" class="field">
+                    <p id="year-error" class="error-p"></p>
+                </div>
+            </div>
+            <div id="arrow-container">
+                <div id="line"></div>
+                <button type="button" id="arrow"><img src="down-arrow.png" alt="arrow" id="img"></button>
+            </div>
+            <div id="result-container">
+                <div class="result">
+                    <p class="count">--</p>
+                    <p class="text">years</p>
+                </div>
+                <div class="result">
+                    <p class="count">--</p>
+                    <p class="text">months</p>
+                </div>
+                <div class="result">
+                    <p class="count">--</p>
+                    <p class="text">days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
