@@ -72,7 +72,7 @@ let showError = (errorElement, errorMessege) => {
 
 let removeError = (errorElement, errorMessege) => {
     document.querySelector("#" + errorElement + "-label").style.color = "var(--smokey-grey)";
-    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--light-grey)";
+    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--purple)";
     document.querySelector("#" + errorElement + "-error").innerHTML = errorMessege;
     document.querySelector("#" + errorElement + "-error").classList.remove("error");
 }
