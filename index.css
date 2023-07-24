@@ -5,7 +5,7 @@
     height: 100vh;
     background-color: var(--off-white);
     display: flex;
-    place-content: center;
+    justify-content: center;
     align-items: center;
 }
 
@@ -86,6 +86,10 @@
     border-top: 1px solid var(--light-grey);
 }
 
+.line {
+    display: none;
+}
+
 #arrow {
     background-color: var(--purple);
     width: 70px;
@@ -138,4 +142,78 @@
     font-weight: 700;
     font-style: italic;
 
+}
+
+/* ----------------media querries---------------- */
+
+@media (max-width: 768px) {
+    #card-container {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #card-wrapper {
+        border-radius: 16px 16px 100px 16px;
+    }
+    
+    #field-container {
+        padding: 10px;
+    }
+    
+    .empty-field {
+        padding: 10px 5px;
+    }
+    
+    .label {
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+    
+    .field {
+        padding: 5px 10px;
+        font-size: 14px;
+        width: 73px;
+    }
+    
+    .error-p {
+        height: 8px;
+        }
+    
+    .error {
+        font-size: 8px;
+    }
+    
+    #arrow-container {
+        padding: 5px 15px;
+    }
+    
+    #line {
+        margin-top: 18px;
+    }
+
+    .line {
+        display: block;
+    }
+    
+    #arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #result-container {
+        padding: 10px 15px 40px 15px;
+    
+    }
+    
+    .result {
+        padding: 5px 20px;
+    }
+    
+    .count {
+        font-size: 40px;
+    }
+    
+    .text {
+        font-size: 40px;    
+    }
 }
