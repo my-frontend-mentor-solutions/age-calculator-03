@@ -1,17 +1,22 @@
-// let dayLabel = document.getElementById("day-label");
-// let monthLabel = document.getElementById("month-label");
-// let yearLabel = document.getElementById("year-label");
 let dayField = document.getElementById("day-field");
 let monthField = document.getElementById("month-field");
 let yearField = document.getElementById("year-field");
-// let dayError = document.getElementById("day-error");
-// let monthError = document.getElementById("month-error");
-// let yearError = document.getElementById("year-error");
-// let errorClass = document.getElementsByClassName("error");
 
 let allFields = document.getElementsByClassName("field");
 
-var currentYear = new Date().getFullYear();
+var dateNow = new Date();
+
+var currentDay = dateNow.getDate();
+var currentMonth = 1 + dateNow.getMonth();
+var currentYear = dateNow.getFullYear();
+
+var allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+let button = document.getElementById("arrow");
+
+let dayCount = document.getElementById("day-count");
+let monthCount = document.getElementById("month-count");
+let yearCount = document.getElementById("year-count");
 
 dayField.addEventListener("input", () => {
     dayField.value = dayField.value.slice(0,2);
@@ -24,6 +29,20 @@ monthField.addEventListener("input", () => {
 yearField.addEventListener("input", () => {
     yearField.value = yearField.value.slice(0,4);
 });
+
+let showError = (errorElement, errorMessege) => {
+    document.querySelector("#" + errorElement + "-label").style.color = "var(--light-red)";
+    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--light-red)";
+    document.querySelector("#" + errorElement + "-error").innerHTML = errorMessege;
+    document.querySelector("#" + errorElement + "-error").classList.add("error");
+}
+
+let removeError = (errorElement, errorMessege) => {
+    document.querySelector("#" + errorElement + "-label").style.color = "var(--smokey-grey)";
+    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--light-grey)";
+    document.querySelector("#" + errorElement + "-error").innerHTML = errorMessege;
+    document.querySelector("#" + errorElement + "-error").classList.remove("error");
+}
 
 dayField.addEventListener("focusout", () => {
     
@@ -62,17 +81,27 @@ yearField.addEventListener("focusout", () => {
     }
 });
 
+button.addEventListener("click", () => {
 
-let showError = (errorElement, errorMessege) => {
-    document.querySelector("#" + errorElement + "-label").style.color = "var(--light-red)";
-    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--light-red)";
-    document.querySelector("#" + errorElement + "-error").innerHTML = errorMessege;
-    document.querySelector("#" + errorElement + "-error").classList.add("error");
-}
+    var inputDay = dayField.value;
+    var inputMonth = monthField.value;
+    var inputYear = yearField.value;
 
-let removeError = (errorElement, errorMessege) => {
-    document.querySelector("#" + errorElement + "-label").style.color = "var(--smokey-grey)";
-    document.querySelector("#" + errorElement + "-field").style.borderColor = "var(--purple)";
-    document.querySelector("#" + errorElement + "-error").innerHTML = errorMessege;
-    document.querySelector("#" + errorElement + "-error").classList.remove("error");
-}
+    if (inputDay > currentDay) {
+        currentDay += allMonths[currentMonth - 1];
+        currentMonth -= 1; 
+    }
+    
+    if (inputMonth > currentMonth) {
+        currentMonth += 12;
+        currentYear -= 1;
+    }
+    
+    var calcDay = currentDay - inputDay;
+    var calcMonth = currentMonth - inputMonth;
+    var calcYear = currentYear - inputYear;
+
+    dayCount.innerHTML = calcDay;
+    monthCount.innerHTML = calcMonth;
+    yearCount.innerHTML = calcYear;
+});
