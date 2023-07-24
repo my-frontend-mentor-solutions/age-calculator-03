@@ -50,7 +50,7 @@ dayField.addEventListener("focusout", () => {
         showError("day","This field is required");
     }
     else if (dayField.value > 31 || dayField.value == 0) {
-        showError("day","Invalid input");
+        showError("day","Enter a valid day");
     }
     else {
         removeError("day","");
@@ -62,7 +62,7 @@ monthField.addEventListener("focusout", () => {
         showError("month","This field is required");
     }
     else if (monthField.value > 12 || monthField.value == 0) {
-        showError("month","Invalid input");
+        showError("month","Enter a valid month");
     }
     else {
         removeError("month","");
@@ -74,7 +74,7 @@ yearField.addEventListener("focusout", () => {
         showError("year","This field is required");
     }
     else if (yearField.value > currentYear) {
-        showError("year","Invalid input");
+        showError("year","Enter a valid year");
     }
     else {
         removeError("year","");
